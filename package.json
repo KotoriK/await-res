@@ -1,0 +1,34 @@
+{
+  "name": "await-res",
+  "version": "0.1.0",
+  "description": "A Promise resolves until HTMLElement loads external resources",
+  "main": "dist/await-res.js",
+  "scripts": {
+    "build": "microbundle",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KotoriK/await-res.git"
+  },
+  "keywords": [
+    "await",
+    "promise",
+    "es6",
+    "resource",
+    "image"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "KotoriK",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KotoriK/await-res/issues"
+  },
+  "homepage": "https://github.com/KotoriK/await-res#readme",
+  "devDependencies": {
+    "microbundle": "^0.14.2",
+    "typescript": "^4.5.4"
+  }
+}
