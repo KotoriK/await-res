@@ -2,7 +2,7 @@
  *  
  * @param img 
  */
-export const awaitImage: (img: HTMLImageElement) => Promise<void> =
+const awaitImage: (img: HTMLImageElement) => Promise<void> =
     typeof HTMLImageElement !== 'undefined' && 'decode' in HTMLImageElement ?
         (img) => img.decode() :
         (img) =>
@@ -14,3 +14,4 @@ export const awaitImage: (img: HTMLImageElement) => Promise<void> =
                     img.addEventListener('error', reject, { once: true })
                 }
             })
+export default awaitImage

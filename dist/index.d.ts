@@ -1,6 +1,6 @@
 /**
  *
- * @param imgElement
- * @returns Event, undefined when Image is already loaded
+ * @param img
  */
-export declare const awaitImage: (imgElement: HTMLImageElement) => Promise<void | Event>;
+declare const awaitImage: (img: HTMLImageElement) => Promise<void>;
+export default awaitImage;

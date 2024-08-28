@@ -2,11 +2,18 @@
   "name": "await-res",
   "version": "0.1.0",
   "description": "A Promise resolves until HTMLElement loads external resources",
-  "main": "dist/await-res.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "source": "index.ts",            
+  "exports": {
+    "require": "./dist/await-res.cjs",      
+    "default": "./dist/await-res.js" 
+  },
+  "main": "./dist/await-res.cjs",          
+  "module": "./dist/await-res.js",  
+  "unpkg": "./dist/await-res.umd.js",  
+  "types": "dist/index.d.ts", 
   "scripts": {
-    "build": "microbundle",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "microbundle"
   },
   "repository": {
     "type": "git",
@@ -29,7 +36,7 @@
   },
   "homepage": "https://github.com/KotoriK/await-res#readme",
   "devDependencies": {
-    "microbundle": "^0.14.2",
-    "typescript": "^4.5.4"
+    "microbundle": "^0.15.1",
+    "typescript": "^5.5.4"
   }
 }
