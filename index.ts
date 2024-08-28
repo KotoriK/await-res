@@ -1,14 +1,16 @@
 /**
  *  
- * @param imgElement 
- * @returns Event, undefined when Image is already loaded
+ * @param img 
  */
-export const awaitImage = (imgElement: HTMLImageElement) =>
-    new Promise<Event | void>((resolve, reject) => {
-        if (imgElement.complete) {
-            resolve()
-        } else {
-            imgElement.addEventListener('load', resolve)
-            imgElement.addEventListener('error', reject)
-        }
-    })
+export const awaitImage: (img: HTMLImageElement) => Promise<void> =
+    typeof HTMLImageElement !== 'undefined' && 'decode' in HTMLImageElement ?
+        (img) => img.decode() :
+        (img) =>
+            new Promise<void>((resolve, reject) => {
+                if (img.complete) {
+                    resolve()
+                } else {
+                    img.addEventListener('load', () => resolve(), { once: true })
+                    img.addEventListener('error', reject, { once: true })
+                }
+            })
