@@ -6,7 +6,8 @@
   "source": "index.ts",            
   "exports": {
     "require": "./dist/await-res.cjs",      
-    "default": "./dist/await-res.js" 
+    "default": "./dist/await-res.js",
+    "types": "./dist/index.d.ts"
   },
   "main": "./dist/await-res.cjs",          
   "module": "./dist/await-res.js",  
